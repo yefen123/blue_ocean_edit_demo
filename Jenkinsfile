@@ -1,9 +1,32 @@
 pipeline {
   agent any
   stages {
+    stage('pull_code') {
+      steps {
+        sh 'echo \'clone code\''
+      }
+    }
+
     stage('build') {
       steps {
-        sleep 1
+        sh 'echo \'building\''
+      }
+    }
+
+    stage('deploy') {
+      parallel {
+        stage('deploy') {
+          steps {
+            sh 'echo \'deploy...\''
+          }
+        }
+
+        stage('test') {
+          steps {
+            sh 'echo \'test\''
+          }
+        }
+
       }
     }
 
