@@ -34,4 +34,9 @@ pipeline {
   environment {
     COMPLETED_MSG = 'build done'
   }
+  post {
+    always {
+      sh 'echo $COMPLETED_MSG'
+    }
+  }
 }
