@@ -4,8 +4,7 @@ pipeline {
     stage('pull_code') {
       steps {
         sh '''echo \'clone code\'
-cd blue_ocean_edit_demo
-cat Jenkinsfile'''
+echo \'clone code2\''''
       }
     }
 
