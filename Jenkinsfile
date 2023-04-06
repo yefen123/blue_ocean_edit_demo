@@ -4,13 +4,13 @@ pipeline {
     stage('pull_code') {
       agent any
       steps {
-        sh 'git clone https://github.com/yefen123/job_dsl_gradle_example.git && echo ++++++++++++ &&  echo $PWD'
+        sh 'git clone https://github.com/yefen123/job_dsl_gradle_example.git'
       }
     }
 
     stage('build') {
       steps {
-        sh '/var/jenkins_home/workspace/blue_ocean_edit_demo/job_dsl_gradle_example/gradlew assemble'
+        sh '$PWD/job_dsl_gradle_example/gradlew assemble'
       }
     }
 
