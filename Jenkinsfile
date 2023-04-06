@@ -10,7 +10,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh './job_dsl_gradle_example/gradlew assemble'
+        sh './$PWD/job_dsl_gradle_example/gradlew assemble'
       }
     }
 
