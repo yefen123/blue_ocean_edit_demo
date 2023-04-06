@@ -8,5 +8,11 @@ pipeline {
       }
     }
 
+    stage('build') {
+      steps {
+        sh '/var/jenkins_home/workspace/blue_ocean_edit_demo/job_dsl_gradle_example/gradlew assemble'
+      }
+    }
+
   }
 }
