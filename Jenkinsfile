@@ -4,7 +4,7 @@ pipeline {
     stage('pull_code') {
       agent any
       steps {
-        sh 'git clone https://github.com/yefen123/job_dsl_gradle_example.git && echo $PWD'
+        sh 'git clone https://github.com/yefen123/job_dsl_gradle_example.git && echo ++++++++++++ &&  echo $PWD'
       }
     }
 
