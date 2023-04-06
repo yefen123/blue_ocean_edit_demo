@@ -31,4 +31,7 @@ pipeline {
     }
 
   }
+  environment {
+    COMPLETED_MSG = 'build done'
+  }
 }
