@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('pull_code') {
       steps {
-        sh 'echo \'clone code\''
+        sh '''echo \'clone code\'
+cd blue_ocean_edit_demo
+cat Jenkinsfile'''
       }
     }
 
@@ -38,5 +40,6 @@ pipeline {
     always {
       sh 'echo $COMPLETED_MSG'
     }
+
   }
 }
