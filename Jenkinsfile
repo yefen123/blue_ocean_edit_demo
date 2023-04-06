@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''echo \'clone code\'
 echo \'clone code2\''''
+        git 'https://github.com/yefen123/job_dsl_gradle_example.git'
       }
     }
 
