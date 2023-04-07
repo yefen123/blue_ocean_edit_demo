@@ -19,6 +19,12 @@ pipeline {
         sh 'echo \'test ...\''
       }
     }
+    
+    post {
+      always {
+        junit './results.xml'
+      }
+    }
 
   }
 }
