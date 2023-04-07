@@ -4,37 +4,15 @@ pipeline {
     stage('pull_code') {
       agent any
       steps {
-        sh 'echo "clone code .."'
+        sh 'git clone https://github.com/yefen123/job_dsl_gradle_example.git'
       }
     }
 
     stage('build') {
       steps {
-        sh 'echo \'build ...\''
+        sh './job_dsl_gradle_example/gradlew assemble'
       }
     }
-
-    stage('test') {
-      steps {
-        sh 'echo "test ....." > results.xml'
-      }
-      post {
-        always {
-          junit 'test-reports/results.xml' 
-        }
-      }
-    }
-
-    stage('deliver') {
-      steps {
-        sh 'echo \'deliver ...\''
-      }
-      post {
-        success {
-          archiveArtifacts 'test_delivery'
-        }
-      }
-	}
 
   }
 }
