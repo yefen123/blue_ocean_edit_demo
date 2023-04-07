@@ -4,6 +4,7 @@ pipeline {
     stage('pull_code') {
       steps {
         sh 'git clone https://github.com/yefen123/job_dsl_gradle_example.git'
+        sh './job_dsl_gradle_example/gradlew assemble'
       }
     }
 
