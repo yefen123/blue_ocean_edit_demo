@@ -16,7 +16,7 @@ pipeline {
 
     stage('test') {
       steps {
-        sh 'echo "test ....." > results.xml'
+        sh 'echo "test ....."
       }
       post {
         always {
