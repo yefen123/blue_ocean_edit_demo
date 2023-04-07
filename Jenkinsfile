@@ -18,13 +18,22 @@ pipeline {
       steps {
         sh 'echo "test ....." > results.xml'
       }
+      post {
+        always {
+          junit 'test-reports/results.xml' 
+        }
+      }
     }
 
     stage('deliver') {
       steps {
         sh 'echo \'deliver ...\''
       }
-    }
+      post {
+        success {
+          archiveArtifacts 'test_delivery'
+        }
+      }
 
   }
 }
