@@ -20,7 +20,7 @@ pipeline {
       }
       post {
         always {
-          junit '../blue_ocean_edit_demo_dev1_2/results.xml' 
+          junit '../**/*.xml' 
         }
       }
     }
