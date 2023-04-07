@@ -20,14 +20,14 @@ pipeline {
       }
       post {
         always {
-          junit 'test-reports/results.xml' 
+          junit './results.xml' 
         }
       }
     }
 
     stage('deliver') {
       steps {
-        sh 'echo \'deliver ...\''
+        sh 'echo "test ....." > test_delivery'
       }
       post {
         success {
