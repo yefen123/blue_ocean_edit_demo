@@ -20,6 +20,7 @@ pipeline {
       }
       post {
         always {
+          sh 'echo "test ....." > results.xml'
           junit '../**/*.xml' 
         }
       }
