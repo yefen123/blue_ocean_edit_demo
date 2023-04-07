@@ -11,6 +11,7 @@ pipeline {
     stage('build') {
       steps {
         sh './job_dsl_gradle_example/gradlew assemble'
+        sh 'echo \'add???\''
       }
     }
 
